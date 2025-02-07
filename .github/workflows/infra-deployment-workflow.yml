@@ -7,7 +7,7 @@ on:
   
   workflow_dispatch:
 env:
-  CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
+  # CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
   CLUSTER_RESOURCE_GROUP: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
 
   # name: Azure ARM
@@ -43,7 +43,7 @@ jobs:
       # az feature register for Lab 1
     - name: az feature register
       run: |
-        az aks update --resource-group $resourceGroupName --name $CLUSTER_NAME --enable-oidc-issuer --enable-workload-identity
+        az aks update --resource-group ${{ secrets.CLUSTER_RESOURCE_GROUP }} --name ${{ secrets.CLUSTER_NAME }} --enable-oidc-issuer --enable-workload-identity
 
       # Attach ACR to AKS
     - name: attach Azure Container Registry to AKS

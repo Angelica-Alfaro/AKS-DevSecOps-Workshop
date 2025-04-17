@@ -7,7 +7,7 @@ import java.util.List;
 public class BookServiceToken {
 
     private BookDatabase booksDatabase;
-    private static final String API_TOKEN = "NRzrSyAQfxPJiounlnZjODEO5ZieffeBv6yft2K";
+    private static final String API_TOKEN = "AIzaSyD-12345abcdeFGHIJKLMNOPQRSTUvwxYz";
 
     public BookService() throws BookServiceException {
         String databaseUrl = System.getenv("DATABASE_URL");
